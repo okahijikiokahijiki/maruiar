@@ -15,7 +15,7 @@
         <a-entity camera gps-camera></a-entity>
         
         <!-- GPS位置情報に基づいてランダムな位置にARコンテンツを表示する latitude: 35.6814; longitude: 139.7671; radius: 10; -->
-        <a-entity gps-entity-place="latitude: 38.13878173834891; longitude: 140.28368836416482; radius: 10;">
+        <a-entity gps-entity-place="latitude: 38.1387; longitude: 140.2836; radius: 10;">
             <!-- ランダムな位置にボックスを表示 -->
             <a-entity position="{{ getRandomPosition() }}">
                 <a-box material="color: red;"></a-box>
@@ -27,8 +27,8 @@
         // ランダムな位置を計算する関数
         function getRandomPosition() {
             var radius = 0.0001; // GPS位置の幅（半径）
-            var latitude = 35.6814; // 八重洲口の緯度
-            var longitude = 139.7671; // 八重洲口の経度
+            var latitude = 38.1387; // 八重洲口の緯度
+            var longitude = 140.2836; // 八重洲口の経度
             
             // ランダムな緯度と経度を計算
             var randomLatitude = latitude + (Math.random() * 2 * radius - radius);
