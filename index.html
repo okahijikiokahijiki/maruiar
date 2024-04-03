@@ -14,9 +14,11 @@
         <!-- カメラの設定 -->
         <a-entity camera gps-camera></a-entity>
         
-        <!-- 所定の位置にARコンテンツを表示する -->
+        <!-- 特定の位置にARコンテンツを表示する -->
         <a-entity gps-entity-place="latitude: 38.1387; longitude: 140.2836;">
-            <a-box material="color: red;"></a-box>
+            <!-- 半径10mの範囲でオブジェクトを表示 -->
+            <a-box material="color: red;" position="-5 0 0"></a-box>
+            <a-box material="color: green;" position="5 0 0"></a-box>
         </a-entity>
     </a-scene>
 </body>
