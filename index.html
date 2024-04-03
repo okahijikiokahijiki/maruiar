@@ -15,7 +15,7 @@
         <a-entity camera gps-camera></a-entity>
         
         <!-- GPS位置情報に基づいてランダムな位置にARコンテンツを表示する latitude: 35.6814; longitude: 139.7671; radius: 10; -->
-        <a-entity gps-entity-place="latitude: 38.1387; longitude: 140.2836; radius: 2;">
+        <a-entity gps-entity-place="latitude: 38.1387; longitude: 140.2836; radius: 10;">
             <!-- ランダムな位置にボックスを表示 -->
             <a-entity position="{{ getRandomPosition() }}">
                 <a-box material="color: red;"></a-box>
