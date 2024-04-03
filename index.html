@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random AR Objects within GPS Range</title>
-    <!-- A-Frame‚ÆAR.js‚ÌƒXƒNƒŠƒvƒg‚ğ“Ç‚İ‚Ş -->
+    <!-- A-Frameã¨AR.jsã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’èª­ã¿è¾¼ã‚€ -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <!-- AR.js‚ğg—p‚µ‚½ARƒV[ƒ“‚ğì¬ -->
+    <!-- AR.jsã‚’ä½¿ç”¨ã—ãŸARã‚·ãƒ¼ãƒ³ã‚’ä½œæˆ -->
     <a-scene embedded arjs>
-        <!-- ƒJƒƒ‰‚Ìİ’è -->
+        <!-- ã‚«ãƒ¡ãƒ©ã®è¨­å®š -->
         <a-entity camera gps-camera></a-entity>
         
-        <!-- GPSˆÊ’uî•ñ‚ÉŠî‚Ã‚¢‚Äƒ‰ƒ“ƒ_ƒ€‚ÈˆÊ’u‚ÉARƒRƒ“ƒeƒ“ƒc‚ğ•\¦‚·‚é -->
-        <a-entity gps-entity-place="latitude: 35.6814; longitude: 139.7671; radius: 10;">
-            <!-- ƒ‰ƒ“ƒ_ƒ€‚ÈˆÊ’u‚Éƒ{ƒbƒNƒX‚ğ•\¦ -->
+        <!-- GPSä½ç½®æƒ…å ±ã«åŸºã¥ã„ã¦ãƒ©ãƒ³ãƒ€ãƒ ãªä½ç½®ã«ARã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚’è¡¨ç¤ºã™ã‚‹ latitude: 35.6814; longitude: 139.7671; radius: 10; -->
+        <a-entity gps-entity-place="latitude: 38.1502; longitude: 140.2742; radius: 10;">
+            <!-- ãƒ©ãƒ³ãƒ€ãƒ ãªä½ç½®ã«ãƒœãƒƒã‚¯ã‚¹ã‚’è¡¨ç¤º -->
             <a-entity position="{{ getRandomPosition() }}">
                 <a-box material="color: red;"></a-box>
             </a-entity>
@@ -24,17 +24,17 @@
     </a-scene>
 
     <script>
-        // ƒ‰ƒ“ƒ_ƒ€‚ÈˆÊ’u‚ğŒvZ‚·‚éŠÖ”
+        // ãƒ©ãƒ³ãƒ€ãƒ ãªä½ç½®ã‚’è¨ˆç®—ã™ã‚‹é–¢æ•°
         function getRandomPosition() {
-            var radius = 0.0001; // GPSˆÊ’u‚Ì•i”¼Œaj
-            var latitude = 35.6814; // ”ªdFŒû‚ÌˆÜ“x
-            var longitude = 139.7671; // ”ªdFŒû‚ÌŒo“x
+            var radius = 0.0001; // GPSä½ç½®ã®å¹…ï¼ˆåŠå¾„ï¼‰
+            var latitude = 35.6814; // å…«é‡æ´²å£ã®ç·¯åº¦
+            var longitude = 139.7671; // å…«é‡æ´²å£ã®çµŒåº¦
             
-            // ƒ‰ƒ“ƒ_ƒ€‚ÈˆÜ“x‚ÆŒo“x‚ğŒvZ
+            // ãƒ©ãƒ³ãƒ€ãƒ ãªç·¯åº¦ã¨çµŒåº¦ã‚’è¨ˆç®—
             var randomLatitude = latitude + (Math.random() * 2 * radius - radius);
             var randomLongitude = longitude + (Math.random() * 2 * radius - radius);
             
-            // ARƒRƒ“ƒeƒ“ƒc‚ÌˆÊ’u‚ğ•Ô‚·
+            // ARã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã®ä½ç½®ã‚’è¿”ã™
             return randomLatitude + " 0 " + randomLongitude;
         }
     </script>
