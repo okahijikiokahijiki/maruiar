@@ -14,16 +14,16 @@
         <!-- カメラの設定 -->
         <a-entity camera gps-camera></a-entity>
         
-        <!-- GPS情報を使用して現在位置にARコンテンツを表示する -->
-        <a-entity id="arEntity" gps-entity-place="latitude: 38.13867043698855; longitude: 140.2836761052845;">
+        <!-- GPS情報を使用して現在位置にARコンテンツを表示する 38.7636023782383, 140.30430057895686-->
+        <a-entity id="arEntity" gps-entity-place="latitude: 38.7636; longitude: 140.3043;">
             <!-- ARオブジェクト -->
             <a-box material="color: red;"></a-box>
         </a-entity>
         
         <!-- 初期位置 -->
         <script>
-            var initialLatitude = 38.1387;
-            var initialLongitude = 140.2836;
+            var initialLatitude = 38.7636;
+            var initialLongitude = 140.3043;
 
             // GPS情報の取得とARコンテンツの位置更新
             function updateLocation() {
