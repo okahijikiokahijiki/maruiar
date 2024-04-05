@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR at Marui8monjiya</title>
+    <title>AR at 8</title>
     <!-- A-FrameとAR.jsのスクリプトを読み込む -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
@@ -15,10 +15,37 @@
         <a-entity camera gps-camera></a-entity>
         
         <!-- 特定の位置にARコンテンツを表示する -->
-        <a-entity gps-entity-place="latitude: 38.7636; longitude: 140.3043;">
-            <!-- 半径10mの範囲でオブジェクトを表示 -->
-            <a-box material="color: red;" position="-5 0 0"></a-box>
-            <a-box material="color: green;" position="5 0 0"></a-box>
+        <a-entity gps-entity-place="latitude: 38.1387; longitude: 140.2836;">
+            <!-- JavaScriptでARオブジェクトを追加 -->
+            <script>
+                // 特定の位置の緯度と経度
+                var targetLatitude = 38.7635;
+                var targetLongitude = 140.3043;
+
+                // 半径10mの範囲内にあるかどうかを判定する関数
+                function isInRadius(latitude, longitude) {
+                    // ターゲット位置との距離を計算
+                    var distance = Math.sqrt(Math.pow(latitude - targetLatitude, 2) + Math.pow(longitude - targetLongitude, 2));
+
+                    // 距離が10m以内の場合にtrueを返す
+                    return distance <= 0.00009; // 緯度経度の単位で計算
+                }
+
+                // 現在位置の取得
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // 現在の緯度と経度
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+
+                    // 半径10mの範囲内にある場合にARオブジェクトを表示
+                    if (isInRadius(latitude, longitude)) {
+                        var arObject = document.createElement('a-box');
+                        arObject.setAttribute('material', 'color: red;');
+                        arObject.setAttribute('position', '0 0 0');
+                        document.querySelector('a-scene').appendChild(arObject);
+                    }
+                });
+            </script>
         </a-entity>
     </a-scene>
 </body>
