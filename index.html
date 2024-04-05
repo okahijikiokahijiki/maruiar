@@ -31,12 +31,12 @@
                     var latitude = position.coords.latitude;
                     var longitude = position.coords.longitude;
 
-                    // 初期位置と現在位置の差を計算
+                    // 初期位置と位置の差を計算
                     var latDiff = Math.abs(latitude - initialLatitude);
                     var lonDiff = Math.abs(longitude - initialLongitude);
 
                     // 差が一定の範囲内にある場合にARコンテンツを更新
-                    var threshold = 0.0001; // 誤差の許容範囲
+                    var threshold = 0.00001; // 誤差の許容範囲
                     if (latDiff <= threshold && lonDiff <= threshold) {
                         var arEntity = document.querySelector('#arEntity');
                         arEntity.setAttribute('gps-entity-place', {latitude: latitude, longitude: longitude});
