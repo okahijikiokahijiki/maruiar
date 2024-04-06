@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Location-based AR</title>
     <!-- A-FrameとAR.jsのスクリプトを読み込む -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
@@ -21,7 +21,7 @@
             <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#CCC"></a-plane>
             
             <!-- ARオブジェクト -->
-            <a-entity geometry="primitive: box" position="0 1.5 0" material="color: red;"></a-entity>
+            <a-box position="0 1.5 0" material="color: red;"></a-box>
         </a-entity>
     </a-scene>
 </body>
