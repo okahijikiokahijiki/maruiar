@@ -10,17 +10,17 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
     <!-- AR.jsを使用したARシーンを作成 -->
-    <a-scene embedded arjs>
+    <a-scene embedded arjs vr-mode-ui="enabled: false">
         <!-- カメラの設定 -->
         <a-entity camera gps-camera></a-entity>
         
-        <!-- GPS情報を使用して現在位置にARコンテンツを表示する 38.138677352163306, 140.2836808402339-->
+        <!-- GPS情報を使用して現在位置にARコンテンツを表示する -->
         <a-entity gps-entity-place="latitude: 38.1387; longitude: 140.2836;">
-            <!-- ARオブジェクト -->
-            <a-box material="color: red;"></a-box>
+            <!-- 地面 -->
+            <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#CCC"></a-plane>
             
-            <!-- テキスト -->
-            <a-entity position="0 1.5 0" text="value: Hello, World!; align: center; width: 4; color: black; font: https://cdn.aframe.io/fonts/Roboto-msdf.json;"></a-entity>
+            <!-- ARオブジェクト -->
+            <a-box position="0 0.5 0" material="color: red;"></a-box>
         </a-entity>
     </a-scene>
 </body>
