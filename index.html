@@ -15,13 +15,14 @@
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
       embedded
     >
-      <a-assets>
-        <a-asset-item
-          id="asset-eevee"
-          src="../assets/eevee.gltf"
-        ></a-asset-item>
-      </a-assets>
-
+        <!-- GPS情報を使用して現在位置にARコンテンツを表示する -->
+        <a-entity gps-entity-place="latitude: 38.1387; longitude: 140.2836;">
+            <!-- ARオブジェクトを表示 -->
+                <a-box position="0 0 0" material="color: red;"></a-box>
+                <a-sphere radius="1" material="color: blue;"></a-sphere>
+                <!-- 他のARオブジェクトをここに追加する -->
+        </a-entity>
+      
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
 
