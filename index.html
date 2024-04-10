@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>AR.js A-Frame Location-based</title>
-<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
-</head>
-<body>
-<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 38.763596; longitude: 140.304307" scale="10 10 10"></a-entity>
-</a-scene>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ar</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+
+  <body>
+    <a-scene
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+    >
+  <a-text
+  position="300 100 -450"
+  rotation="0 0 0"
+  letterSpacing="50"
+  align="center"
+  value="Books"
+  color="blue"
+  negate="true"
+  scale="1000 1000 1000"
+  ps-entity-place="latitude: 38.763628280965804; longitude: 140.30429786572188;">
+  </a-text>
+<a-text
+  position="100 100 100"
+  rotation="0 0 0"
+  letterSpacing="50"
+  align="center"
+  value="Magazine"
+  color="red"
+  negate="true"
+  scale="1200 1200 1200"
+  ps-entity-place="latitude: 38.76361; longitude: 140.30428;">
+  </a-text>
+        <a-text
+  position="-300 -100 450"
+  rotation="0 20 0"
+  letterSpacing="50"
+  align="center"
+  value="Stationary"
+  color="blue"
+  negate="true"
+  scale="800 800 800"
+  ps-entity-place="latitude: 38.76363; longitude: 140.30430;">
+  </a-text>
+        <a-text
+  position="-100 -100 -100"
+  rotation="0 0 0"
+  letterSpacing="50"
+  align="center"
+  value="Music"
+  color="yellow"
+  negate="true"
+  scale="500 500 1000"
+  ps-entity-place="latitude: 38.76360; longitude: 140.30427;">
+  </a-text>
+        
+      <a-camera gps-camera rotation-reader position="0 0 0"> </a-camera>
+    </a-scene>
+  </body>
 </html>
